@@ -1,0 +1,24 @@
+from run_for_all_input_and_timer import Manager, timer
+from typing import List
+
+setup = Manager()
+input = setup.get_file()
+
+
+@timer
+def solve(input: List[str]) -> int:git
+    input = sorted([int(i) for i in input])
+    input_dict = dict()
+    for key, element in enumerate(input):
+        input_dict[element] = key
+    for key, element in enumerate(input):
+        if 2020 - element in input_dict and input_dict[2020 - element] != key:
+            return (2020 - element) * element
+
+
+
+# 366 + 1654
+# 605364
+
+if __name__ == "__main__":
+    print(solve(input))
