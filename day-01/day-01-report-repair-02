@@ -17,11 +17,16 @@ def solve(input: List[str]) -> int:
     for idx_x, x in enumerate(input[:-2]):
         bigger_than_half = 2020 / 2
         if x < bigger_than_half:
-            nested_dict = dict()
-            nested_dict[input[idx_x + 1]] = input[idx_x + 2::]
-            x_key_all_val_dict[x] = nested_dict
+            first_nested_dict = dict()
+            second_nested_sorted_dict = dict()
+            for idx_rest, rest_of_numbers in enumerate(input[idx_x + 2::]):
+                second_nested_sorted_dict[rest_of_numbers] = idx_rest
+            first_nested_dict[input[idx_x + 1]] = second_nested_sorted_dict
+            x_key_all_val_dict[x] = first_nested_dict # outer dictionary
+    for item_in_each_list in x_key_all_val_dict:
 
-    return len(x_key_all_val_dict)
+
+    return x_key_all_val_dict
 
 
 
