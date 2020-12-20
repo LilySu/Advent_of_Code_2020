@@ -33,7 +33,7 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
-| [Day 1: Report Repair]()| | |
+| [Day 1: Report Repair]( )| | |
 | [Day 2: Password Philosophy]()| | |
 | [Day 3: Toboggan Trajectory]()| | |
 | [Day 4: Passport Processing]()| | |
