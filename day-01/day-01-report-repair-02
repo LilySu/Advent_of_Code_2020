@@ -1,0 +1,30 @@
+from run_for_all_input_and_timer import Manager, timer
+from typing import List
+
+setup = Manager()
+input = setup.get_file()
+
+
+# Using the above example again, the three entries that sum to 2020 are 979, 366, and 675.
+# Multiplying them together produces the answer, 241861950.
+#
+# In your expense report, what is the product of the three entries that sum to 2020?
+
+@timer
+def solve(input: List[str]) -> int:
+    input = sorted([int(i) for i in input])
+    x_key_all_val_dict = dict()
+    for idx_x, x in enumerate(input[:-2]):
+        bigger_than_half = 2020 / 2
+        if x < bigger_than_half:
+            nested_dict = dict()
+            nested_dict[input[idx_x + 1]] = input[idx_x + 2::]
+            x_key_all_val_dict[x] = nested_dict
+
+    return len(x_key_all_val_dict)
+
+
+
+
+if __name__ == "__main__":
+    print(solve(input))

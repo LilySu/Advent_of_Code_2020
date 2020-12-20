@@ -1,3 +1,4 @@
+
 # Advent_of_Code_2020
 Advent of Code 2020 https://adventofcode.com/2020
 
@@ -10,10 +11,6 @@ Advent of Code 2020 🎄 Python Solutions by
 [Linkedin](https://www.linkedin.com/in/lilyxsu/)
 |
 [Instagram](https://www.instagram.com/lilyxsu/)
-
-[![Build Status](https://github.com/adriennetacke/advent-of-code-2020/workflows/build/badge.svg)](https://github.com/adriennetacke/advent-of-code-2020/actions)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 
 Readme Template thanks to [adriennetacke](https://github.com/adriennetacke/advent-of-code-2020)
 
@@ -33,28 +30,10 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
-| [Day 1: Report Repair](X)| | |
-| [Day 2: Password Philosophy]()| | |
-| [Day 3: Toboggan Trajectory]()| | |
-| [Day 4: Passport Processing]()| | |
-| [Day 5: Binary Boarding]()| | |
-| [Day 6: Custom Customs]()| | |
-| [Day 7: Handy Haversacks]()| | |
-| [Day 8: Handheld Halting]()| | |
-| [Day 9: Encoding Error]()| | |
-| [Day 10: Adapter Array]()| | |
-| [Day 11: Seating System]()| | |
-| [Day 12: Rain Risk]()| | |
-| [Day 13: TBD]()| | |
-| [Day 14: TBD]()| | |
-| [Day 15: TBD]()| | |
-| [Day 16: TBD]()| | |
-| [Day 17: TBD]()| | |
-| [Day 18: TBD]()| | |
-| [Day 19: TBD]()| | |
-| [Day 20: TBD]()| | |
-| [Day 21: TBD]()| | |
-| [Day 22: TBD]()| | |
-| [Day 23: TBD]()| | |
-| [Day 24: TBD]()| | |
-| [Day 25: TBD]()| | |
+
+| [Day 1: Report Repair]()| | |
+
+=======
+| ✔ [Day 1: Report Repair](https://github.com/LilySu/Advent_of_Code_2020/tree/main/day-01)| 🌟 | 🌟 |
+
+
