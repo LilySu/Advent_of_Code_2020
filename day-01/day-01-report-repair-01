@@ -16,9 +16,5 @@ def solve(input: List[str]) -> int:git
             return (2020 - element) * element
 
 
-
-# 366 + 1654
-# 605364
-
 if __name__ == "__main__":
     print(solve(input))

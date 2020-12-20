@@ -14,11 +14,11 @@ class Manager:
 def timer(func):
     def wrapper(*args, **kwargs):
         all_runtimes = 0
-        iterations = 10000
+        iterations = 1
         for i in range(iterations):
             start_time = time.time()
             result = func(*args, **kwargs)
             all_runtimes += time.time() - start_time
-        print(f"\nTime required on average for 10,000 iterations: {(all_runtimes/iterations)*1000:.4f} ms\n")
+        print(f"\nTime required on average for 1 iterations: {(all_runtimes/iterations)*1000:.4f} ms\n")
         return result
     return wrapper

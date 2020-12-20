@@ -4,30 +4,14 @@ from typing import List
 setup = Manager()
 input = setup.get_file()
 
-
-# Using the above example again, the three entries that sum to 2020 are 979, 366, and 675.
-# Multiplying them together produces the answer, 241861950.
-#
-# In your expense report, what is the product of the three entries that sum to 2020?
-
 @timer
 def solve(input: List[str]) -> int:
     input = sorted([int(i) for i in input])
-    x_key_all_val_dict = dict()
-    for idx_x, x in enumerate(input[:-2]):
-        bigger_than_half = 2020 / 2
-        if x < bigger_than_half:
-            first_nested_dict = dict()
-            second_nested_sorted_dict = dict()
-            for idx_rest, rest_of_numbers in enumerate(input[idx_x + 2::]):
-                second_nested_sorted_dict[rest_of_numbers] = idx_rest
-            first_nested_dict[input[idx_x + 1]] = second_nested_sorted_dict
-            x_key_all_val_dict[x] = first_nested_dict # outer dictionary
-    for item_in_each_list in x_key_all_val_dict:
-
-
-    return x_key_all_val_dict
-
+    for idx_i, i in enumerate(input):
+        exclude_i = input[idx_i + 1::]
+        for idx_j, j in enumerate(exclude_i):
+            if (2020 - i - j) in input[idx_j + 1::]:
+                return (i * j * (2020 - i - j))
 
 
 
