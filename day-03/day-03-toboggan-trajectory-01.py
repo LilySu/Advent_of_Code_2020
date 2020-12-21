@@ -13,35 +13,27 @@ def solve(input: List[str]) -> int:
     counter = 0
     l = []
     idx = 0
+
     # for each item in list
     for ix, ele in enumerate(input):
-        # if #, replace with X,
-        if idx == 0 :
-            idx = 0
-            l.append(ele)
-            idx += 3
-            continue
-        elif idx > len(input[0]):
-            break
-        elif ele[idx] == '#' and idx <= len(input[0]):
+        if idx > len(ele):
+            num_iterations_multiply = (idx // len(ele)) + 1
+            input[ix] = input[ix] * num_iterations_multiply
+
+        if input[ix][idx] == "#":
             # string[:position] + character + string[position+1:]
-            l.append(ele[:idx] + 'X' + ele[idx + 1:])
+            l.append(input[ix][:idx] + "X" + input[ix][idx + 1 :])
             counter += 1
             if idx != len(input[0]):
                 idx += 3
-        elif idx <= len(input[0]):
+        else:
             # otherwise O
-            l.append(ele[:idx] + 'O' + ele[idx + 1:])
+            l.append(input[ix][:idx] + "O" + input[ix][idx + 1 :])
             if idx != len(input[0]):
                 idx += 3
-        # else:
-        #     break
-            # idx = 0
-        # break
-        # check
+
     l = "\n".join(l)
     print(l)
-    # print("\n".join(input))
     return counter
 
 
