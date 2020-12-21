@@ -6,7 +6,7 @@ input = setup.get_file()
 
 
 @timer
-def solve(input: List[str]) -> int:git
+def solve(input: List[str]) -> int:
     input = sorted([int(i) for i in input])
     input_dict = dict()
     for key, element in enumerate(input):

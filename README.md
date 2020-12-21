@@ -30,10 +30,8 @@ Collect stars by solving puzzles. Two puzzles will be made available on each day
 
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
-
-| [Day 1: Report Repair]()| | |
-
-=======
 | ✔ [Day 1: Report Repair](https://github.com/LilySu/Advent_of_Code_2020/tree/main/day-01)| 🌟 | 🌟 |
+| ✔ [Day 2: Password Philosophy](https://github.com/LilySu/Advent_of_Code_2020/tree/main/day-02)| 🌟 | 🌟 |
+| ⏳ [Day 3: Tobaggan Trajectory](https://github.com/LilySu/Advent_of_Code_2020/tree/main/day-03)| ⏳ |  |
 
 
