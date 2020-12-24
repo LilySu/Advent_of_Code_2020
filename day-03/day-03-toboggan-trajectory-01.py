@@ -1,5 +1,3 @@
-import re
-from collections import Counter
 from typing import List
 
 from run_for_all_input_and_timer import Manager, timer
