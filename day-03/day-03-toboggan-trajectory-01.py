@@ -19,21 +19,26 @@ def solve(input: List[str]) -> int:
             input[ix] = input[ix] * num_iterations_multiply
 
         if input[ix][idx] == "#":
+            # for each item in line of input, if the item happens
+            # to be '#', then append that line, changing item to 'X'
+            # else append that line, changing item to 'O'.
+
             # string[:position] + character + string[position+1:]
             l.append(input[ix][:idx] + "X" + input[ix][idx + 1 :])
             counter += 1
-            if idx != len(input[0]):
-                idx += 3
         else:
             # otherwise O
             l.append(input[ix][:idx] + "O" + input[ix][idx + 1 :])
-            if idx != len(input[0]):
-                idx += 3
+        if idx != len(input[0]):
+            idx += 3
 
     l = "\n".join(l)
     print(l)
+
     return counter
 
 
 if __name__ == "__main__":
     print(solve(input))
+
+# 184

@@ -7,33 +7,58 @@ input = setup.get_file()
 
 
 @timer
-def solve(input: List[str], iterate_right: int, iterate_down: int) -> int:
-    counter = 0
-    l = []
-    idx = 0
+class Trajectory:
+    """
+    prints pattern with X's and O's
+    in given slope based on right and down.
+    elongates input as needed depending on slope
+    """
+    def __init__(self, input, right, down):
+        self.input = input
+        self.right = right
+        self.down = down
+        self.counter = 0
 
-    # for each item in list
-    for ix in range(0, len(input), iterate_down):
-        if idx > len(input[ix]):
-            num_iterations_multiply = (idx // len(input[ix])) + 1
-            input[ix] = input[ix] * num_iterations_multiply
-        try:
-            if input[ix][idx] == "#":
-                # string[:position] + character + string[position+1:]
-                l.append(input[ix][:idx] + "X" + input[ix][idx + 1:])
-                counter += 1
-                if idx != len(input[0]):
-                    idx += iterate_right
-            else:
-                # otherwise O
-                l.append(input[ix][:idx] + "O" + input[ix][idx + 1:])
-                if idx != len(input[0]):
-                    idx += iterate_right
-        except:
-            pass
-    l = "\n".join(l)
-    print(l)
-    return counter
+    # for coordinate at top left
+    # decrement to the right
+    # check grid storage
+    def get_count(self):
+        # make a full grid based on slope requirements
+        self.input = [(self.input[i] * len(self.input[0])) + self.input[0] for i in range(len(self.input))]
+        for item_in_input in range(0, len(self.input[:3]) + 1, self.down):
+
+            for item_in_line in range(0, len(self.input[item_in_input]) + 1, self.right):
+                if self.input[item_in_input][item_in_line] == '#':
+                    print(self.input[item_in_input][:item_in_line] + 'X' + self.input[item_in_input][item_in_line + 1:])
+        #             self.counter += 1
+        #             print(item_in_input, item_in_line)
+        #             print(self.input[item_in_input])
+        # return self.counter
+        return self.input
+    #
+    # def get_length(self, index_of_input):
+    #     len(self.input[index_of_input])
+    #
+    # def check_tree(self):
+    #     for ix in range(0, len(self.input), self.down):
+    #         for idx in range(len(self.input[ix])):
+    #             if self.input[ix][idx] == '#':
+    #                 print(self.input[ix][:idx] + 'X' + self.input[ix][idx + 1:])
+    #                 self.counter += 1
+    #             else:
+    #                 print(self.input[ix][:idx] + 'O' + self.input[ix][idx + 1:])
+    #
+    # def make_pattern_longer(self):
+    #     idx = 0
+    #     # for each item in list
+    #     for ix, ele in enumerate(self.input):
+    #         if idx > len(ele):
+    #             num_iterations_multiply = (idx // len(ele)) + 1
+    #             self.input[ix] = self.input[ix] * num_iterations_multiply
+    #
+    #         if idx != len(self.input[0]):
+    #             idx += self.right
+
 
 # Right 1, down 1.
 # Right 3, down 1. (This is the slope you already checked.)
@@ -45,9 +70,6 @@ def solve(input: List[str], iterate_right: int, iterate_down: int) -> int:
 # 184
 
 
-input = open('input-03-sample.txt', r)
-
 if __name__ == "__main__":
-    result = solve(input, 1, 1) * solve(input, 3, 1) * solve(input, 5, 1) * solve(input, 7, 1) * solve(input, 1, 2)
-    # result = solve(input, 1, 2)
-    print(result)
+    t = Trajectory(input, 3, 1)
+    print(len(t.get_count()))
